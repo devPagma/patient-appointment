@@ -12,7 +12,7 @@ const AppointmentList = () => {
   // Count completed appointments
   const completedCount = appointments.filter(app => app.status === 'completed').length;
 
-  // Function to mark an appointment as completed
+  // This is to make  the appointments list to be updated 
   const markAsCompleted = (id) => {
     setAppointments(prevAppointments =>
       prevAppointments.map(app =>
@@ -21,61 +21,94 @@ const AppointmentList = () => {
     );
   };
 
-  // Styles
   const styles = {
     container: { 
-      maxWidth: '600px', 
-      margin: '0 auto', 
-      textAlign: 'center', 
-      fontFamily: 'Arial', 
-      padding: '20px', 
-      backgroundColor: '#f9f9f9', 
-      borderRadius: '10px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+      maxWidth: '800px', 
+      margin: '20px auto', 
+      padding: '30px', 
+      backgroundColor: '#f0f4f8', 
+      borderRadius: '15px',
+      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)'
     },
     header: { 
-      fontSize: '28px', 
-      margin: '20px 0', 
-      color: '#333' 
+      fontSize: '32px', 
+      marginBottom: '30px', 
+      color: '#2c3e50',
+      textAlign: 'center',
+      fontWeight: 'bold'
     },
     card: { 
-      padding: '20px', 
-      border: '1px solid #ddd', 
-      borderRadius: '8px', 
-      marginBottom: '15px', 
+      padding: '25px', 
+      border: 'none', 
+      borderRadius: '12px', 
+      marginBottom: '20px', 
       backgroundColor: '#fff', 
-      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', 
-      transition: 'transform 0.3s'
+      boxShadow: '0 5px 15px rgba(0, 0, 0, 0.08)', 
+      transition: 'all 0.3s ease'
     },
     cardHover: {
-      transform: 'scale(1.02)'
+      transform: 'translateY(-5px)',
+      boxShadow: '0 8px 20px rgba(0, 0, 0, 0.12)'
+    },
+    completedCard: {
+      backgroundColor: '#e8f5e9',
+      opacity: 0.8
+    },
+    patientName: {
+      fontSize: '24px',
+      color: '#34495e',
+      marginBottom: '10px'
+    },
+    appointmentInfo: {
+      fontSize: '16px',
+      color: '#7f8c8d',
+      marginBottom: '5px'
+    },
+    statusTag: {
+      display: 'inline-block',
+      padding: '5px 10px',
+      borderRadius: '20px',
+      fontSize: '14px',
+      fontWeight: 'bold',
+      textTransform: 'uppercase'
+    },
+    scheduledStatus: {
+      backgroundColor: '#3498db',
+      color: '#fff'
     },
     completedText: { 
       textDecoration: 'line-through', 
       color: 'gray' 
     },
+    
+    completedStatus: {
+      backgroundColor: '#2ecc71',
+      color: '#fff'
+    },
     button: { 
       marginTop: '15px', 
-      padding: '10px 15px', 
+      padding: '10px 20px', 
       cursor: 'pointer', 
-      backgroundColor: '#4CAF50', 
+      backgroundColor: '#3498db', 
       color: '#fff', 
       border: 'none', 
-      borderRadius: '5px', 
+      borderRadius: '25px', 
       fontSize: '16px', 
-      transition: 'background-color 0.3s'
+      transition: 'all 0.3s ease',
+      outline: 'none'
     },
     buttonHover: {
-      backgroundColor: '#45a049'
+      backgroundColor: '#2980b9',
+      transform: 'scale(1.05)'
     },
     footer: {
-      marginTop: '20px',
+      marginTop: '30px',
       fontSize: '18px',
       fontWeight: 'bold',
-      color: '#333'
+      color: '#2c3e50',
+      textAlign: 'center'
     }
   };
-
   return (
     <div style={styles.container}>
       <h1 style={styles.header}>Patient Appointments</h1>
