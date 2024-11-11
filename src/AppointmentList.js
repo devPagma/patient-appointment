@@ -7,10 +7,10 @@ const initialAppointments = [
 ];
 
 const AppointmentList = () => {
-  const [appointments, setAppointments] = useState(initialAppointments);
+  const [appointments, setAppointments] = useState(initialAppointments); //usestate is hook to manage state in functional component
 
   // Count completed appointments
-  const completedCount = appointments.filter(app => app.status === 'completed').length;
+  const completedCount = appointments.filter(app => app.status === 'completed').length; //filter is used to filter the array based on condition   
 
   // This is to make  the appointments list to be updated 
   const markAsCompleted = (id) => {
@@ -18,8 +18,9 @@ const AppointmentList = () => {
       prevAppointments.map(app =>
         app.id === id ? { ...app, status: 'completed' } : app
       )
-    );
-  };
+    ); //map is used to iterate over the array and update the array based on condition
+    //markascompleted is a function which is called when the button is clicked and it updates the status of the appointment to completed
+  }; //setAppointments is used to update the state of the appointments
 
   const styles = {
     container: { 
